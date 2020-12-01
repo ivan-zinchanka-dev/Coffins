@@ -3,7 +3,6 @@
 public class Collision : MonoBehaviour {
 
     public TMPro.TMP_Text t_score;
-
     private int score = 0;
 
     private void OnTriggerEnter2D(Collider2D other) {

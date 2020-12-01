@@ -47,9 +47,8 @@ public class Controller : MonoBehaviour {
 
     private void OnMouseDown(){
 
-        if (Generator.isGameOver()) {
+        if (SceneManager.isGameOver()) {
 
-            Generator.SetGameOverState(false);
             Application.LoadLevel("MainScene");          
         }
 
@@ -62,8 +61,6 @@ public class Controller : MonoBehaviour {
 
         fingerPos.x = (fingerPos.x > 5.5f) ? 5.5f : fingerPos.x;
         fingerPos.x = (fingerPos.x < -5.5f) ? -5.5f : fingerPos.x;
-
-        //player.position = new Vector2(fingerPos.x, fingerPos.y);
 
         begin = player.position.x;
         
