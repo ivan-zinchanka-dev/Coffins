@@ -2,28 +2,44 @@
 
 public class PrefsPhysics : MonoBehaviour {
 
-    private float gravity = 9.0f;
+    [SerializeField] private float gravity = 9.0f;                      // g = 9.0, sgl = -8.5, bgl = -6.5
+    [SerializeField] private float ground_level = -8.5f;
     private int id;
+    private bool isGrounded = false;
 
     private void Start(){
 
-        gravity = SceneManager.GetGravity();   
+        gravity = SceneManager.Instance.GetGravity();   
+    }
+
+    public void BombDetonation()
+    {
+        SpecialEffectsManager.Instance.CreateExplosion(this.transform.position);
+        Destroy(this.gameObject);
     }
 
     private void Update(){
- 
-        this.transform.position -= new Vector3(0, gravity * Time.deltaTime, 0);
 
-        if (this.transform.position.y < -11.0f) {
-                     
-            if(this.gameObject.tag == "Skeleton")
+        if (!isGrounded)
+        {
+            this.transform.position -= new Vector3(0, gravity * Time.deltaTime, 0);
+
+            if (this.transform.position.y < ground_level)
             {
-                SceneManager.SetGameOverState(true);
+                isGrounded = true;
+
+                if (this.gameObject.tag == "Skeleton")
+                {                 
+                    this.GetComponent<Animator>().SetBool("isFallen", true);
+                    SceneManager.Instance.GameOver = true;
+                }
+                else if (this.gameObject.tag == "Bomb") {
+
+                    BombDetonation();
+                }            
             }
-
-            Destroy(this.gameObject);
-
-        }
+          
+        }   
 
     }
 }

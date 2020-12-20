@@ -1,0 +1,497 @@
+fileFormatVersion: 2
+guid: 79885c08dedc4ea4aa9e88b6fc4f3eeb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3128344261370708630
+    second: SkeletonDieAnim_0
+  - first:
+      213: -2706394582912773035
+    second: SkeletonDieAnim_1
+  - first:
+      213: 2694682255409204751
+    second: SkeletonDieAnim_2
+  - first:
+      213: 2243006010375550777
+    second: SkeletonDieAnim_3
+  - first:
+      213: -5329008432639970928
+    second: SkeletonDieAnim_4
+  - first:
+      213: -503746427486559882
+    second: SkeletonDieAnim_5
+  - first:
+      213: 8913185889297749705
+    second: SkeletonDieAnim_6
+  - first:
+      213: 3206430261661209670
+    second: SkeletonDieAnim_7
+  - first:
+      213: -8449394764218148359
+    second: SkeletonDieAnim_8
+  - first:
+      213: -3625630630119990463
+    second: SkeletonDieAnim_9
+  - first:
+      213: -7351404339657796832
+    second: SkeletonDieAnim_10
+  - first:
+      213: 5834813731051895832
+    second: SkeletonDieAnim_11
+  - first:
+      213: 51722704423613371
+    second: SkeletonDieAnim_12
+  - first:
+      213: 1963995451475831301
+    second: SkeletonDieAnim_13
+  - first:
+      213: -8431724429519294176
+    second: SkeletonDieAnim_14
+  - first:
+      213: -1235379128573690227
+    second: SkeletonDieAnim_15
+  - first:
+      213: -545314813050946240
+    second: SkeletonDieAnim_16
+  - first:
+      213: -5107351444658867161
+    second: SkeletonDieAnim_17
+  - first:
+      213: -586523326243592381
+    second: SkeletonDieAnim_18
+  - first:
+      213: 8011003918004777030
+    second: SkeletonDieAnim_19
+  - first:
+      213: 3671530584178354715
+    second: SkeletonDieAnim_20
+  - first:
+      213: -6492811319815423215
+    second: SkeletonDieAnim_21
+  - first:
+      213: 6510485197281478289
+    second: SkeletonDieAnim_22
+  - first:
+      213: -5286307840261712471
+    second: SkeletonDieAnim_23
+  - first:
+      213: -2408830838488709840
+    second: SkeletonDieAnim_24
+  - first:
+      213: -3586169801398205048
+    second: SkeletonDieAnim_25
+  - first:
+      213: -6830360395722049326
+    second: SkeletonDieAnim_26
+  - first:
+      213: -3964688419597356273
+    second: SkeletonDieAnim_27
+  - first:
+      213: -3085658568447711628
+    second: SkeletonDieAnim_28
+  - first:
+      213: -7014608280403346428
+    second: SkeletonDieAnim_29
+  - first:
+      213: -7216034981035861263
+    second: SkeletonDieAnim_30
+  - first:
+      213: 6327642855469661330
+    second: SkeletonDieAnim_31
+  - first:
+      213: 5210147249083383596
+    second: SkeletonDieAnim_32
+  - first:
+      213: -2495029417765317684
+    second: SkeletonDieAnim_33
+  - first:
+      213: 510921285756501027
+    second: SkeletonDieAnim_34
+  - first:
+      213: 1904758704672198017
+    second: SkeletonDieAnim_35
+  - first:
+      213: 7459967201182604038
+    second: SkeletonDieAnim_36
+  - first:
+      213: 6113005876491348621
+    second: SkeletonDieAnim_37
+  - first:
+      213: -4056368894506434596
+    second: SkeletonDieAnim_38
+  - first:
+      213: -1477095260425029805
+    second: SkeletonDieAnim_39
+  - first:
+      213: 1331028449016960978
+    second: SkeletonDieAnim_40
+  - first:
+      213: -7406165322232459108
+    second: SkeletonDieAnim_41
+  - first:
+      213: 5605057636469409199
+    second: SkeletonDieAnim_42
+  - first:
+      213: 6500667233411455329
+    second: SkeletonDieAnim_43
+  - first:
+      213: 3097370719626731453
+    second: SkeletonDieAnim_44
+  - first:
+      213: 8424429668550311948
+    second: SkeletonDieAnim_45
+  - first:
+      213: -394657911173465971
+    second: SkeletonDieAnim_46
+  - first:
+      213: 5435369981136962567
+    second: SkeletonDieAnim_47
+  - first:
+      213: 8341063345008492526
+    second: SkeletonDieAnim_48
+  - first:
+      213: 8850774195076664383
+    second: SkeletonDieAnim_49
+  - first:
+      213: 8982492146877999945
+    second: SkeletonDieAnim_50
+  - first:
+      213: 1433212099529898945
+    second: SkeletonDieAnim_51
+  - first:
+      213: -3632935226854415820
+    second: SkeletonDieAnim_52
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SkeletonDieAnim_0
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 39
+        width: 697
+        height: 927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6920222f78c1a6b20800000000000000
+      internalID: 3128344261370708630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDieAnim_1
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 39
+        width: 641
+        height: 927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55451774774f07ad0800000000000000
+      internalID: -2706394582912773035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDieAnim_2
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 39
+        width: 756
+        height: 913
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ec638fb3f656520800000000000000
+      internalID: 2694682255409204751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDieAnim_3
+      rect:
+        serializedVersion: 2
+        x: 2426
+        y: 42
+        width: 820
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 937308d1512c02f10800000000000000
+      internalID: 2243006010375550777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDieAnim_4
+      rect:
+        serializedVersion: 2
+        x: 3317
+        y: 39
+        width: 830
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091fe67901f8b06b0800000000000000
+      internalID: -5329008432639970928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDieAnim_5
+      rect:
+        serializedVersion: 2
+        x: 4220
+        y: 39
+        width: 1031
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671aacc0b455209f0800000000000000
+      internalID: -503746427486559882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDieAnim_6
+      rect:
+        serializedVersion: 2
+        x: 5359
+        y: 37
+        width: 1211
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6dd9c975ff1bb70800000000000000
+      internalID: 8913185889297749705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDieAnim_7
+      rect:
+        serializedVersion: 2
+        x: 6715
+        y: 39
+        width: 1654
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6441167a5578f7c20800000000000000
+      internalID: 3206430261661209670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDieAnim_8
+      rect:
+        serializedVersion: 2
+        x: 8495
+        y: 39
+        width: 1837
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f95bbf8a38bdba80800000000000000
+      internalID: -8449394764218148359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDieAnim_9
+      rect:
+        serializedVersion: 2
+        x: 10496
+        y: 39
+        width: 1802
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b1cecb62c2fadc0800000000000000
+      internalID: -3625630630119990463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

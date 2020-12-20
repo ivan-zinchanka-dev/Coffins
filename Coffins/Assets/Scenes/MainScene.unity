@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 72812334}
   - component: {fileID: 72812333}
   m_Layer: 0
-  m_Name: Rails_0 (1)
+  m_Name: Rails_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,13 +276,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72812332}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.36, y: -6.426, z: 0}
   m_LocalScale: {x: 0.48, y: 0.48, z: 1}
   m_Children:
   - {fileID: 2030328027}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1210198088}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &167825213
 GameObject:
@@ -573,7 +573,7 @@ RectTransform:
   - {fileID: 824862769}
   - {fileID: 167825214}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -674,6 +674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 522945315}
   - component: {fileID: 522945314}
+  - component: {fileID: 522945316}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -693,8 +694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d803a7e33f03c5d4f9c6deeeb0c0e094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeleton: {fileID: 2486038670041116234, guid: 12449940fad50b94a8df9dd6e76ff6a5,
-    type: 3}
+  skeleton:
+  - {fileID: 2486038670041116234, guid: 12449940fad50b94a8df9dd6e76ff6a5, type: 3}
+  - {fileID: 6858437293052150352, guid: 4881882130a91ee49be8da9a50ec6fca, type: 3}
   bomb: {fileID: 1835317394075921432, guid: a1cfaa8be566c1a4384d6ea7572d5c5c, type: 3}
   collisions: {fileID: 785735729}
   msg: {fileID: 167825216}
@@ -706,12 +708,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522945313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 345.08002, y: 630.7346, z: -151.21875}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &522945316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522945313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cecda1905c712fd41ab900f4a0bfd177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoke: {fileID: 4305425094025151324, guid: 3f2d7834e1a10544bb55e5ac189a4c8c, type: 3}
+  explosion_spark: {fileID: 8613619727571805165, guid: 82b913b3a427a3748ad8197de1646905,
+    type: 3}
+  spark_duration: 0.1
 --- !u!1 &543390650
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +741,7 @@ GameObject:
   - component: {fileID: 543390651}
   - component: {fileID: 543390652}
   m_Layer: 0
-  m_Name: Rails_1
+  m_Name: Rails_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -877,7 +895,7 @@ Transform:
   m_LocalScale: {x: 0.493, y: 0.493, z: 0.493}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &785735728
 BoxCollider2D:
@@ -969,7 +987,7 @@ GameObject:
   - component: {fileID: 823098583}
   - component: {fileID: 823098582}
   m_Layer: 0
-  m_Name: Rails_0 (2)
+  m_Name: Rails_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1032,13 +1050,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823098581}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.36, y: -6.426, z: 0}
   m_LocalScale: {x: 0.48, y: 0.48, z: 1}
   m_Children:
   - {fileID: 1839227273}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1210198088}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824862768
 GameObject:
@@ -1053,7 +1071,7 @@ GameObject:
   - component: {fileID: 824862770}
   - component: {fileID: 824862772}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1236,6 +1254,39 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1210198087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1210198088}
+  m_Layer: 0
+  m_Name: Rails
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1210198088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210198087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1392642885}
+  - {fileID: 72812334}
+  - {fileID: 823098583}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1392642883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,7 +1298,7 @@ GameObject:
   - component: {fileID: 1392642885}
   - component: {fileID: 1392642884}
   m_Layer: 0
-  m_Name: Rails_0
+  m_Name: Rails_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1310,13 +1361,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392642883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -6.426, z: 0}
   m_LocalScale: {x: 0.48, y: 0.48, z: 1}
   m_Children:
   - {fileID: 543390651}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1210198088}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1727846733
 GameObject:
@@ -1350,6 +1401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 785735727}
   speed: 35
+  animation_speed: 0.7
   animator: {fileID: 785735731}
 --- !u!65 &1727846735
 BoxCollider:
@@ -1376,7 +1428,7 @@ Transform:
   m_LocalScale: {x: 15, y: 21, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1810508266
 GameObject:
@@ -1442,7 +1494,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839227272
 GameObject:
@@ -1455,7 +1507,7 @@ GameObject:
   - component: {fileID: 1839227273}
   - component: {fileID: 1839227274}
   m_Layer: 0
-  m_Name: Rails_1
+  m_Name: Rails_31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1536,7 +1588,7 @@ GameObject:
   - component: {fileID: 2030328027}
   - component: {fileID: 2030328028}
   m_Layer: 0
-  m_Name: Rails_1
+  m_Name: Rails_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

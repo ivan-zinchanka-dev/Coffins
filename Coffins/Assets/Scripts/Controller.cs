@@ -4,6 +4,7 @@ public class Controller : MonoBehaviour {
 
     [SerializeField] private Transform player;
     [SerializeField] private float speed = 35.0f;
+    [SerializeField] private float animation_speed = 0.7f;
     public Animator animator;
 
     private float begin = 0, end = 0;
@@ -12,20 +13,21 @@ public class Controller : MonoBehaviour {
 
         if (begin < end)
         {
+            animator.speed = animation_speed;
             animator.SetBool("Left", false);
             animator.SetBool("Right", true); 
             return 1;
         }
         else if (begin > end)
         {
+            animator.speed = animation_speed;
             animator.SetBool("Right", false);
             animator.SetBool("Left", true);
             return -1;
         }
         else {
 
-            animator.SetBool("Right", false);
-            animator.SetBool("Left", false);
+            animator.speed = 0;
             return 0;
         }
 
@@ -47,9 +49,14 @@ public class Controller : MonoBehaviour {
 
     private void OnMouseDown(){
 
-        if (SceneManager.isGameOver()) {
+        if (SceneManager.Instance.GameOver)
+        {
+            Application.LoadLevel("MainScene");
+        }
+        else if (SceneManager.FirstGame) {
 
-            Application.LoadLevel("MainScene");          
+            SceneManager.FirstGame = false;
+            Application.LoadLevel("MainScene");
         }
 
     }
