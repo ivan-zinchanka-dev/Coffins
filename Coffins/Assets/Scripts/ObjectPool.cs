@@ -1,63 +1,58 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-
 
 class ObjectPool
 {
-    private int size;
-    private LinkedList<FloatingObject> objects;
+    private List<FloatingObject> objects;
 
-    private class FloatingObject
-    {
-        public bool isAvail;
-        public bool isInit;
-        public GameObject gameObj;
-        public int id;
+    public ObjectPool(int count, FloatingObject source) {
 
-        static int objectsCount = 0;
+        objects = new List<FloatingObject>();
 
-        public FloatingObject(GameObject obj)
+        for (int i = 0; i < count; i++)
         {
-            gameObj = obj;
-            isAvail = true;
-            isInit = false;
+            AddObject(source);
         }
 
     }
 
+    public void Initialize(int count, FloatingObject source)
+    {
 
-    public ObjectPool(int size)
-    {
-        this.size = size;
-    }
+        objects = new List<FloatingObject>();
 
-    public void AddObject(GameObject obj)
-    {
-        objects.AddLast(new FloatingObject(obj));
-    }
-    
-    public void Instantiate(Vector2 position)
-    {
-        foreach(var it in objects)
+        for (int i = 0; i < count; i++)
         {
-            if (!it.isInit)
-            {
-                GameObject.Instantiate(it.gameObj, position, Quaternion.identity);
-                it.isInit = true;
-                it.isAvail = false;
 
-            }
-            else if (it.isAvail)
-            {
-                it.gameObj.transform.position = position;
-                it.isAvail = false;
-                break;
-            }
+            AddObject(source);
         }
 
     }
 
+    private void AddObject(FloatingObject source) {
+
+        GameObject temp = GameObject.Instantiate(source.gameObject);
+        temp.name = source.name;
+        objects.Add(temp.GetComponent<FloatingObject>());
+        temp.SetActive(false);
+    }
+
+    public FloatingObject GetObject() {
+
+        for (int i = 0; i < objects.Count; i++) {
+
+            if (objects[i].gameObject.activeInHierarchy == false) {
+
+                objects[i].gameObject.SetActive(true);
+
+                return objects[i];
+            }
+        }
+
+        AddObject(objects[0]);
+        return objects[objects.Count - 1];
+    }
+   
 
 
 

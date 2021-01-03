@@ -30,9 +30,7 @@ public class Controller : MonoBehaviour {
             animator.speed = 0;
             return 0;
         }
-
     }
-
 
     private void Start(){
 

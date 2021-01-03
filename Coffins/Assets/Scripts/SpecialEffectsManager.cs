@@ -3,9 +3,12 @@
 public class SpecialEffectsManager : MonoBehaviour
 {
     public static SpecialEffectsManager Instance = null;
-    [SerializeField] private ParticleSystem smoke = null;
-    [SerializeField] private SpriteRenderer explosion_spark = null;
+    [SerializeField] private FloatingObject smoke = null;
+    [SerializeField] private FloatingObject explosion_spark = null;
     [SerializeField] private float spark_duration = 0.25f;
+
+    ObjectPool SmokePool;
+    ObjectPool ExplosionPool;
 
     void Awake()
     {
@@ -17,14 +20,21 @@ public class SpecialEffectsManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        SmokePool = new ObjectPool(3, smoke);
+        ExplosionPool = new ObjectPool(3, explosion_spark);
+    }
+
     public void CreateExplosion(Vector3 position) {
 
-        ParticleSystem smoke_clone = Instantiate(smoke, position, Quaternion.identity) as ParticleSystem;
-        Destroy(smoke_clone.gameObject, smoke.duration * 2);
+        FloatingObject smoke_clone = SmokePool.GetObject() as FloatingObject;
+        smoke_clone.transform.position = position;
+        StartCoroutine(smoke_clone.ReturnToPool(smoke.GetComponent<ParticleSystem>().duration * 2));
 
-        SpriteRenderer explosion_clone = Instantiate(explosion_spark, position, Quaternion.identity) as SpriteRenderer;
-        Destroy(explosion_clone.gameObject, spark_duration);
-
+        FloatingObject explosion_clone = ExplosionPool.GetObject() as FloatingObject;
+        explosion_clone.transform.position = position;
+        StartCoroutine(explosion_clone.ReturnToPool(spark_duration));
     }
 
 }

@@ -2,7 +2,7 @@
 
 public class PrefsPhysics : MonoBehaviour {
 
-    [SerializeField] private float gravity = 9.0f;                      // g = 9.0, sgl = -8.5, bgl = -6.5
+    [SerializeField] private float gravity = 9.0f;                      
     [SerializeField] private float ground_level = -8.5f;
     private int id;
     private bool isGrounded = false;
@@ -12,10 +12,16 @@ public class PrefsPhysics : MonoBehaviour {
         gravity = SceneManager.Instance.GetGravity();   
     }
 
+    public void Restart() {
+
+        gravity = SceneManager.Instance.GetGravity();
+    }
+
     public void BombDetonation()
     {
+        isGrounded = false;
         SpecialEffectsManager.Instance.CreateExplosion(this.transform.position);
-        Destroy(this.gameObject);
+        this.GetComponent<FloatingObject>().ReturnToPool();      
     }
 
     private void Update(){

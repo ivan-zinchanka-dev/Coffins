@@ -15,7 +15,7 @@ public class Collision : MonoBehaviour {
 
         if (other.gameObject.tag == "Skeleton")
         {
-            Destroy(other.gameObject);
+            other.GetComponent<FloatingObject>().ReturnToPool();
 
             if (!SceneManager.Instance.GameOver) {
 
@@ -33,7 +33,6 @@ public class Collision : MonoBehaviour {
                 SceneManager.Instance.GameOver = true;
             }            
         }
-
     }
 
     public int GetScore() {
