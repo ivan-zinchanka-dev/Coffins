@@ -2,6 +2,7 @@
 
 public class PrefsPhysics : MonoBehaviour {
 
+    int a;
     [SerializeField] private float gravity = 9.0f;                      
     [SerializeField] private float ground_level = -8.5f;
     private int id;
