@@ -28,6 +28,8 @@ public class SpecialEffectsManager : MonoBehaviour
 
     public void CreateExplosion(Vector3 position) {
 
+        this.GetComponent<AudioSource>().Play();
+
         FloatingObject smoke_clone = SmokePool.GetObject() as FloatingObject;
         smoke_clone.transform.position = position;
         StartCoroutine(smoke_clone.ReturnToPool(smoke.GetComponent<ParticleSystem>().duration * 2));

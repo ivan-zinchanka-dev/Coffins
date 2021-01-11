@@ -16,6 +16,7 @@ public class Collision : MonoBehaviour {
         if (other.gameObject.tag == "Skeleton")
         {
             other.GetComponent<FloatingObject>().ReturnToPool();
+            this.GetComponent<AudioSource>().Play();
 
             if (!SceneManager.Instance.GameOver) {
 

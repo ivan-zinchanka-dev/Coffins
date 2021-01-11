@@ -2,26 +2,26 @@
 
 public class PrefsPhysics : MonoBehaviour {
 
-    int a;
+    [SerializeField] private AudioClip bones; 
+
     [SerializeField] private float gravity = 9.0f;                      
     [SerializeField] private float ground_level = -8.5f;
     private int id;
     private bool isGrounded = false;
 
-    private void Start(){
-
-        gravity = SceneManager.Instance.GetGravity();   
-    }
+    private AudioSource audioSource;
 
     public void Restart() {
 
         gravity = SceneManager.Instance.GetGravity();
+        audioSource = this.GetComponent<AudioSource>();
+        audioSource.Play();
     }
 
     public void BombDetonation()
     {
         isGrounded = false;
-        SpecialEffectsManager.Instance.CreateExplosion(this.transform.position);
+        SpecialEffectsManager.Instance.CreateExplosion(this.transform.position); 
         this.GetComponent<FloatingObject>().ReturnToPool();      
     }
 
@@ -38,6 +38,10 @@ public class PrefsPhysics : MonoBehaviour {
                 if (this.gameObject.tag == "Skeleton")
                 {                 
                     this.GetComponent<Animator>().SetBool("isFallen", true);
+
+                    audioSource.clip = bones;
+                    audioSource.Play();                  
+
                     SceneManager.Instance.GameOver = true;
                 }
                 else if (this.gameObject.tag == "Bomb") {
