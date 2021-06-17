@@ -9,7 +9,6 @@ public class FloatingObject : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-
     public void ReturnToPool()
     {
         gameObject.SetActive(false);

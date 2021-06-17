@@ -4785,8 +4785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: babca27136a0a4c46a0c75ff520e7f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortingLayerName: Default
-  SortingOrder: 0
+  _sortingLayerName: Default
+  _sortingOrder: 0
 --- !u!1 &1835317394075921432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4885,9 +4885,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91fe481035b107748abf5810309a36c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bones: {fileID: 0}
-  gravity: 9
-  ground_level: -7.5
+  _bonesSound: {fileID: 8300000, guid: f5a970032a5551d43aef90d423fecc4b, type: 3}
+  _gravity: 9
+  _groundLevel: -8.5
 --- !u!58 &1805699519
 CircleCollider2D:
   m_ObjectHideFlags: 0

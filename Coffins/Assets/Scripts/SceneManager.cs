@@ -3,45 +3,47 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour{
 
-    public static SceneManager Instance;
-    public static bool FirstGame = true;
-    [SerializeField] private FloatingObject[] skeletons;
-    [SerializeField] private FloatingObject bomb;
-    [SerializeField] private Collision collisions;
-    [SerializeField] private TMPro.TMP_Text msg;
+    public static SceneManager Instance { get; private set; } = null;
+    public static bool FirstGame { get; set; } = true;
+    
+    [SerializeField] private FloatingObject[] _skeletons;
+    [SerializeField] private FloatingObject _bomb;
+    [SerializeField] private ReactiveBody _coffin;
+    [SerializeField] private TMPro.TMP_Text _msg;
 
-    ObjectPool BombsPool;
-    ObjectPool SkeletonsLeftPool;
-    ObjectPool SkeletonsRightPool;
+    private ObjectPool _bombsPool;
+    private ObjectPool _skeletonsLeftPool;
+    private ObjectPool _skeletonsRightPool;
 
-    private float delay = 1.5f;
-    private const float minDelay = 0.5f;
-    private float speed = 10.0f;
-    private byte stage = 1;
-    private bool viewMsg = false;
-    private const float EcranUpperBorder = 11.0f;
+    private float _currentDelay = 1.5f;
+    private const float _minDelay = 0.5f;
+    private float _gameSpeed = 10.0f;
+    private byte _gameStage = 1;
+    private const float ScreenUpperBorder = 11.0f;
+    private const float ScreenLeftBorder = -4.0f;
+    private const float ScreenRightBorder = 4.0f;
 
-    private bool gameOver;
+    private bool _gameOver;
 
     public bool GameOver {
 
         get {
             
-            return gameOver;
+            return _gameOver;
         }
 
         set {
 
             if (value == true)
             {
-                msg.text = "Game over!\nTap to restart";
+                _msg.text = "Game over!\nTap to restart";
             }
             else {
 
-                msg.text = "";
+                _msg.text = "";
             }
             
-            gameOver = value;
+            _gameOver = value;
         }
     }
 
@@ -57,15 +59,14 @@ public class SceneManager : MonoBehaviour{
 
     private void Start(){
 
-        BombsPool = new ObjectPool(3, bomb);
-        SkeletonsLeftPool = new ObjectPool(2, skeletons[0]);
-        SkeletonsRightPool = new ObjectPool(2, skeletons[1]);
-
-        gameOver = false;
+        _bombsPool = new ObjectPool(3, _bomb);
+        _skeletonsLeftPool = new ObjectPool(2, _skeletons[0]);
+        _skeletonsRightPool = new ObjectPool(2, _skeletons[1]);
+        _gameOver = false;
 
         if (FirstGame)
         {
-            msg.text = "Tap to start";
+            _msg.text = "Tap to start";
             return;
         }
 
@@ -74,68 +75,67 @@ public class SceneManager : MonoBehaviour{
 
     private void Update(){
 
-        if (gameOver || FirstGame) {
+        if (_gameOver || FirstGame) {
 
             return;           
         } 
 
-        if (collisions.GetScore() / 100 > stage - 1) {
+        if (_coffin.GetScore() / 100 > _gameStage - 1) {
 
-            if (stage < 20){
+            if (_gameStage < 20){
 
-                stage++;
-                Debug.Log("STAGE:" + stage);
+                _gameStage++;
             }
 
-            if (delay > minDelay)
+            if (_currentDelay > _minDelay)
             {
-                delay -= 0.2f;
+                _currentDelay -= 0.2f;
             }
-        }     
-  
+        }      
     }
 
     private IEnumerator Spawn(){
 
         byte choise;
+        PrefsPhysics pref = null;
+        FloatingObject bombClone = null;
+        FloatingObject skeletonClone = null;
 
-        while (!gameOver) {
+        while (!_gameOver) {
 
             choise = (byte) Random.Range(0, 2);
 
             if (choise == 0)
             {
-                FloatingObject bomb_clone = BombsPool.GetObject() as FloatingObject;
-                bomb_clone.GetComponent<PrefsPhysics>().Restart();
-                bomb_clone.transform.position = new Vector2(Random.Range(-5, 6), EcranUpperBorder);             
+                bombClone = _bombsPool.GetObject() as FloatingObject; 
+                if (bombClone.TryGetComponent<PrefsPhysics>(out pref)) pref.Restart();
+                bombClone.transform.position = new Vector2(Random.Range(ScreenLeftBorder, ScreenRightBorder), ScreenUpperBorder);             
             }
             else
             {
-
                 choise = (byte)Random.Range(0, 2);
 
                 if (choise == 0)
                 {
-                    FloatingObject skeleton_clone = SkeletonsLeftPool.GetObject() as FloatingObject;
-                    skeleton_clone.GetComponent<PrefsPhysics>().Restart();
-                    skeleton_clone.transform.position = new Vector2(Random.Range(-5, 6), EcranUpperBorder);
+                    skeletonClone = _skeletonsLeftPool.GetObject() as FloatingObject;
+                    if (skeletonClone.TryGetComponent<PrefsPhysics>(out pref)) pref.Restart();
+                    skeletonClone.transform.position = new Vector2(Random.Range(ScreenLeftBorder, ScreenRightBorder), ScreenUpperBorder);
                 }
                 else {
 
-                    FloatingObject skeleton_clone = SkeletonsRightPool.GetObject() as FloatingObject;
-                    skeleton_clone.GetComponent<PrefsPhysics>().Restart();
-                    skeleton_clone.transform.position = new Vector2(Random.Range(-5, 6), EcranUpperBorder);
-                }             
-                
+                    skeletonClone = _skeletonsRightPool.GetObject() as FloatingObject;
+                    if (skeletonClone.TryGetComponent<PrefsPhysics>(out pref)) pref.Restart();
+                    skeletonClone.transform.position = new Vector2(Random.Range(ScreenLeftBorder, ScreenRightBorder), ScreenUpperBorder);
+                }                             
             }
             
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(_currentDelay);
         }
     }
 
     public float GetGravity(){
 
-        return speed * (1.0f + (float)stage / 10);
+        return _gameSpeed * (1.0f + (float)_gameStage / 10);
     }
 
 }

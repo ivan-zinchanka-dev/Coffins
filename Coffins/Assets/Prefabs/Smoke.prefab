@@ -4786,8 +4786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: babca27136a0a4c46a0c75ff520e7f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortingLayerName: Objects
-  SortingOrder: 5
+  _sortingLayerName: Objects
+  _sortingOrder: 6
 --- !u!114 &902167110843207285
 MonoBehaviour:
   m_ObjectHideFlags: 0

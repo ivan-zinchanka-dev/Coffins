@@ -3,58 +3,50 @@ using System.Collections.Generic;
 
 class ObjectPool
 {
-    private List<FloatingObject> objects;
+    private List<FloatingObject> _objects;
 
     public ObjectPool(int count, FloatingObject source) {
 
-        objects = new List<FloatingObject>();
+        _objects = new List<FloatingObject>();
 
         for (int i = 0; i < count; i++)
         {
             AddObject(source);
         }
-
     }
 
     public void Initialize(int count, FloatingObject source)
     {
-
-        objects = new List<FloatingObject>();
+        _objects = new List<FloatingObject>();
 
         for (int i = 0; i < count; i++)
         {
-
             AddObject(source);
         }
-
     }
 
     private void AddObject(FloatingObject source) {
 
         GameObject temp = GameObject.Instantiate(source.gameObject);
         temp.name = source.name;
-        objects.Add(temp.GetComponent<FloatingObject>());
+        _objects.Add(temp.GetComponent<FloatingObject>());
         temp.SetActive(false);
     }
 
     public FloatingObject GetObject() {
 
-        for (int i = 0; i < objects.Count; i++) {
+        for (int i = 0; i < _objects.Count; i++) {
 
-            if (objects[i].gameObject.activeInHierarchy == false) {
+            if (_objects[i].gameObject.activeInHierarchy == false) {
 
-                objects[i].gameObject.SetActive(true);
-
-                return objects[i];
+                _objects[i].gameObject.SetActive(true);
+                return _objects[i];
             }
         }
 
-        AddObject(objects[0]);
-        return objects[objects.Count - 1];
+        AddObject(_objects[0]);
+        return _objects[_objects.Count - 1];
     }
    
-
-
-
 }
 

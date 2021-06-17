@@ -1,33 +1,31 @@
 ﻿using UnityEngine;
 
-public class Collision : MonoBehaviour {
+[RequireComponent(typeof(SpriteRenderer))]
+public class ReactiveBody : MonoBehaviour {
 
-    public TMPro.TMP_Text t_score;
-    private int score = 0;
-    private SpriteRenderer render;
+    [SerializeField] private TMPro.TMP_Text _scoreView; 
+    [SerializeField] private SpriteRenderer _render;
+    [SerializeField] private AudioSource _hitSound;
 
-    private void Start()
-    {
-        render = this.gameObject.GetComponent<SpriteRenderer>();
-    }
+    private int _score = 0;
 
     private void OnTriggerEnter2D(Collider2D other) {
 
         if (other.gameObject.tag == "Skeleton")
         {
             other.GetComponent<FloatingObject>().ReturnToPool();
-            this.GetComponent<AudioSource>().Play();
+            _hitSound.Play();
 
             if (!SceneManager.Instance.GameOver) {
 
-                score += 10;
-                t_score.text = string.Format("{0:d}", score);
+                _score += 10;
+                _scoreView.text = string.Format("{0:d}", _score);
             }
         }
         else if (other.gameObject.tag == "Bomb") {
 
             other.gameObject.GetComponent<PrefsPhysics>().BombDetonation();
-            render.color = Color.gray;
+            _render.color = Color.gray;
 
             if (!SceneManager.Instance.GameOver) {
               
@@ -38,7 +36,7 @@ public class Collision : MonoBehaviour {
 
     public int GetScore() {
 
-        return score;
+        return _score;
     }
 
 

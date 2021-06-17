@@ -1,46 +1,53 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(FloatingObject))]
 public class PrefsPhysics : MonoBehaviour {
 
-    [SerializeField] private AudioClip bones; 
+    [SerializeField] private AudioClip _bonesSound; 
 
-    [SerializeField] private float gravity = 9.0f;                      
-    [SerializeField] private float ground_level = -8.5f;
-    private int id;
-    private bool isGrounded = false;
+    [SerializeField] private float _gravity = 9.0f;                      
+    [SerializeField] private float _groundLevel = -8.5f;
 
-    private AudioSource audioSource;
+    private bool _isGrounded = false;
+
+    private AudioSource _audioSource;
+    private Animator _animator;
+    private FloatingObject _floatingObject;
 
     public void Restart() {
 
-        gravity = SceneManager.Instance.GetGravity();
-        audioSource = this.GetComponent<AudioSource>();
-        audioSource.Play();
+        _gravity = SceneManager.Instance.GetGravity();
+        _animator = GetComponent<Animator>();
+        _audioSource = this.GetComponent<AudioSource>();
+        _floatingObject = GetComponent<FloatingObject>();
+        _audioSource.Play();
     }
 
     public void BombDetonation()
     {
-        isGrounded = false;
+        _isGrounded = false;
         SpecialEffectsManager.Instance.CreateExplosion(this.transform.position); 
-        this.GetComponent<FloatingObject>().ReturnToPool();      
+        _floatingObject.ReturnToPool();      
     }
 
     private void Update(){
 
-        if (!isGrounded)
+        if (!_isGrounded)
         {
-            this.transform.position -= new Vector3(0, gravity * Time.deltaTime, 0);
+            this.transform.position -= new Vector3(0, _gravity * Time.deltaTime, 0);
 
-            if (this.transform.position.y < ground_level)
+            if (this.transform.position.y < _groundLevel)
             {
-                isGrounded = true;
+                _isGrounded = true;
 
                 if (this.gameObject.tag == "Skeleton")
                 {                 
-                    this.GetComponent<Animator>().SetBool("isFallen", true);
+                    _animator.SetBool("isFallen", true);
 
-                    audioSource.clip = bones;
-                    audioSource.Play();                  
+                    _audioSource.clip = _bonesSound;
+                    _audioSource.Play();                  
 
                     SceneManager.Instance.GameOver = true;
                 }

@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 167825216}
   - component: {fileID: 167825215}
   m_Layer: 5
-  m_Name: 'GameState (TMP) '
+  m_Name: GameState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -547,7 +547,7 @@ Canvas:
   m_GameObject: {fileID: 401863954}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -695,12 +695,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d803a7e33f03c5d4f9c6deeeb0c0e094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletons:
+  _skeletons:
   - {fileID: 1775565891102820795, guid: 12449940fad50b94a8df9dd6e76ff6a5, type: 3}
   - {fileID: 7280681618904114593, guid: 4881882130a91ee49be8da9a50ec6fca, type: 3}
-  bomb: {fileID: 2863113588100397392, guid: a1cfaa8be566c1a4384d6ea7572d5c5c, type: 3}
-  collisions: {fileID: 785735729}
-  msg: {fileID: 167825216}
+  _bomb: {fileID: 2863113588100397392, guid: a1cfaa8be566c1a4384d6ea7572d5c5c, type: 3}
+  _coffin: {fileID: 785735729}
+  _msg: {fileID: 167825216}
 --- !u!4 &522945315
 Transform:
   m_ObjectHideFlags: 0
@@ -727,10 +727,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cecda1905c712fd41ab900f4a0bfd177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoke: {fileID: 902167110843207285, guid: 3f2d7834e1a10544bb55e5ac189a4c8c, type: 3}
-  explosion_spark: {fileID: 7084812591755148560, guid: 82b913b3a427a3748ad8197de1646905,
+  _smoke: {fileID: 902167110843207285, guid: 3f2d7834e1a10544bb55e5ac189a4c8c, type: 3}
+  _explosionSpark: {fileID: 7084812591755148560, guid: 82b913b3a427a3748ad8197de1646905,
     type: 3}
-  spark_duration: 0.1
+  _sparkDuration: 0.1
+  _audioSource: {fileID: 522945317}
 --- !u!82 &522945317
 AudioSource:
   m_ObjectHideFlags: 0
@@ -919,10 +920,10 @@ GameObject:
   - component: {fileID: 785735727}
   - component: {fileID: 785735726}
   - component: {fileID: 785735728}
-  - component: {fileID: 785735729}
   - component: {fileID: 785735730}
   - component: {fileID: 785735731}
   - component: {fileID: 785735732}
+  - component: {fileID: 785735729}
   m_Layer: 0
   m_Name: Coffin
   m_TagString: Untagged
@@ -1030,10 +1031,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 785735725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a32796ff710a4049938c91b5b79d2a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 942bdef7005257848a7663ee04bbaebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t_score: {fileID: 824862770}
+  _scoreView: {fileID: 824862770}
+  _render: {fileID: 785735726}
+  _hitSound: {fileID: 785735732}
 --- !u!50 &785735730
 Rigidbody2D:
   serializedVersion: 4
@@ -1287,8 +1290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -145, y: -50}
-  m_SizeDelta: {x: 245, y: 66}
+  m_AnchoredPosition: {x: -234.2, y: -94}
+  m_SizeDelta: {x: 357.38507, y: 105.59839}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824862770
 MonoBehaviour:
@@ -1337,8 +1340,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 110
+  m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1575,7 +1578,7 @@ GameObject:
   - component: {fileID: 1727846735}
   - component: {fileID: 1727846734}
   m_Layer: 0
-  m_Name: Ecran
+  m_Name: Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1593,10 +1596,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95475c931bc24d42803876f4ae0fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 785735727}
-  speed: 35
-  animation_speed: 0.7
-  animator: {fileID: 785735731}
+  _player: {fileID: 785735727}
+  _speed: 35
+  _animationSpeed: 0.7
+  _animator: {fileID: 785735731}
 --- !u!65 &1727846735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1619,7 +1622,7 @@ Transform:
   m_GameObject: {fileID: 1727846733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 21, z: 1}
+  m_LocalScale: {x: 14, y: 21, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

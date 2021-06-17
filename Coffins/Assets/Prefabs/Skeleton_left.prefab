@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91fe481035b107748abf5810309a36c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bones: {fileID: 8300000, guid: f10fe36b4d262d84cb18064bcb3e1d48, type: 3}
-  gravity: 9
-  ground_level: -8.5
+  _bonesSound: {fileID: 8300000, guid: f10fe36b4d262d84cb18064bcb3e1d48, type: 3}
+  _gravity: 9
+  _groundLevel: -8.5
 --- !u!61 &-4249171819105085731
 BoxCollider2D:
   m_ObjectHideFlags: 0
