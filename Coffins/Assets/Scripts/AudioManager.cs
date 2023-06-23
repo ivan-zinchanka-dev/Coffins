@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     private void Awake()
     {       
         DontDestroyOnLoad(this.gameObject);
-        Application.LoadLevel("MainScene");
     }
 
+    private void Start()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
 }

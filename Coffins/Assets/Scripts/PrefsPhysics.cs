@@ -18,7 +18,7 @@ public class PrefsPhysics : MonoBehaviour {
 
     public void Restart() {
 
-        _gravity = SceneManager.Instance.GetGravity();
+        _gravity = GameManager.Instance.GetGravity();
         _animator = GetComponent<Animator>();
         _audioSource = this.GetComponent<AudioSource>();
         _floatingObject = GetComponent<FloatingObject>();
@@ -49,7 +49,7 @@ public class PrefsPhysics : MonoBehaviour {
                     _audioSource.clip = _bonesSound;
                     _audioSource.Play();                  
 
-                    SceneManager.Instance.GameOver = true;
+                    GameManager.Instance.GameOver = true;
                 }
                 else if (this.gameObject.tag == "Bomb") {
 

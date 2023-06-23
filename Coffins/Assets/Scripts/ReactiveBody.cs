@@ -16,7 +16,7 @@ public class ReactiveBody : MonoBehaviour {
             other.GetComponent<FloatingObject>().ReturnToPool();
             _hitSound.Play();
 
-            if (!SceneManager.Instance.GameOver) {
+            if (!GameManager.Instance.GameOver) {
 
                 _score += 10;
                 _scoreView.text = string.Format("{0:d}", _score);
@@ -27,9 +27,9 @@ public class ReactiveBody : MonoBehaviour {
             other.gameObject.GetComponent<PrefsPhysics>().BombDetonation();
             _render.color = Color.gray;
 
-            if (!SceneManager.Instance.GameOver) {
+            if (!GameManager.Instance.GameOver) {
               
-                SceneManager.Instance.GameOver = true;
+                GameManager.Instance.GameOver = true;
             }            
         }
     }
