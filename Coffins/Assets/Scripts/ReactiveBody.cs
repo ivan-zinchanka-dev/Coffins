@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FallingObjects;
+using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class ReactiveBody : MonoBehaviour {
@@ -24,7 +25,7 @@ public class ReactiveBody : MonoBehaviour {
         }
         else if (other.gameObject.tag == "Bomb") {
 
-            other.gameObject.GetComponent<PrefsPhysics>().BombDetonation();
+            other.GetComponent<Bomb>().Detonate();
             _render.color = Color.gray;
 
             if (!GameManager.Instance.GameOver) {

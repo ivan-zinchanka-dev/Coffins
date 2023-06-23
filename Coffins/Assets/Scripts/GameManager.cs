@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using FallingObjects;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour{
@@ -97,7 +98,7 @@ public class GameManager : MonoBehaviour{
     private IEnumerator Spawn(){
 
         byte choise;
-        PrefsPhysics pref = null;
+        FallingObject pref = null;
         FloatingObject bombClone = null;
         FloatingObject skeletonClone = null;
 
@@ -108,7 +109,7 @@ public class GameManager : MonoBehaviour{
             if (choise == 0)
             {
                 bombClone = _bombsPool.GetObject() as FloatingObject; 
-                if (bombClone.TryGetComponent<PrefsPhysics>(out pref)) pref.Restart();
+                if (bombClone.TryGetComponent<FallingObject>(out pref)) pref.Respawn();
                 bombClone.transform.position = new Vector2(Random.Range(ScreenLeftBorder, ScreenRightBorder), ScreenUpperBorder);             
             }
             else
@@ -118,13 +119,13 @@ public class GameManager : MonoBehaviour{
                 if (choise == 0)
                 {
                     skeletonClone = _skeletonsLeftPool.GetObject() as FloatingObject;
-                    if (skeletonClone.TryGetComponent<PrefsPhysics>(out pref)) pref.Restart();
+                    if (skeletonClone.TryGetComponent<FallingObject>(out pref)) pref.Respawn();
                     skeletonClone.transform.position = new Vector2(Random.Range(ScreenLeftBorder, ScreenRightBorder), ScreenUpperBorder);
                 }
                 else {
 
                     skeletonClone = _skeletonsRightPool.GetObject() as FloatingObject;
-                    if (skeletonClone.TryGetComponent<PrefsPhysics>(out pref)) pref.Restart();
+                    if (skeletonClone.TryGetComponent<FallingObject>(out pref)) pref.Respawn();
                     skeletonClone.transform.position = new Vector2(Random.Range(ScreenLeftBorder, ScreenRightBorder), ScreenUpperBorder);
                 }                             
             }

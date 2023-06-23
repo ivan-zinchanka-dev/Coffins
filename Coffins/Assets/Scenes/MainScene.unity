@@ -722,8 +722,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cecda1905c712fd41ab900f4a0bfd177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _smoke: {fileID: 902167110843207285, guid: 3f2d7834e1a10544bb55e5ac189a4c8c, type: 3}
-  _explosionSpark: {fileID: 7084812591755148560, guid: 82b913b3a427a3748ad8197de1646905,
+  _smokeOriginal: {fileID: -5419590793943258424, guid: 3f2d7834e1a10544bb55e5ac189a4c8c,
+    type: 3}
+  _explosionSparkOriginal: {fileID: 7084812591755148560, guid: 82b913b3a427a3748ad8197de1646905,
     type: 3}
   _sparkDuration: 0.1
   _audioSource: {fileID: 522945317}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2170479374278175251}
   - component: {fileID: 7205076878358113332}
-  - component: {fileID: 5739893298778890335}
+  - component: {fileID: 5659155063746087301}
   - component: {fileID: -4249171819105085731}
   - component: {fileID: 74408178}
   - component: {fileID: 1775565891102820795}
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5739893298778890335
+--- !u!114 &5659155063746087301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,12 +98,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2486038670041116234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91fe481035b107748abf5810309a36c2, type: 3}
+  m_Script: {fileID: 11500000, guid: a08a558568f046bdb0915c7150d9db08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bonesSound: {fileID: 8300000, guid: f10fe36b4d262d84cb18064bcb3e1d48, type: 3}
   _gravity: 9
   _groundLevel: -8.5
+  _animator: {fileID: 74408178}
+  _audioSource: {fileID: 4461076870539459172}
+  _bonesSound: {fileID: 8300000, guid: f10fe36b4d262d84cb18064bcb3e1d48, type: 3}
 --- !u!61 &-4249171819105085731
 BoxCollider2D:
   m_ObjectHideFlags: 0

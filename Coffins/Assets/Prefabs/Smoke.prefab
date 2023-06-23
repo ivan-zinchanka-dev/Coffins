@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4305425094025151315}
   - component: {fileID: 4305425094025151324}
   - component: {fileID: 4305425094025151325}
-  - component: {fileID: 902167110843207285}
+  - component: {fileID: -5419590793943258424}
   m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
@@ -4844,7 +4844,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &902167110843207285
+--- !u!114 &-5419590793943258424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4853,6 +4853,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4305425094025151326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deaaa6358f86e724b828afa15c6fd512, type: 3}
+  m_Script: {fileID: 11500000, guid: 542e703f13754d4dabc32aa790107799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _particleSystem: {fileID: 4305425094025151324}

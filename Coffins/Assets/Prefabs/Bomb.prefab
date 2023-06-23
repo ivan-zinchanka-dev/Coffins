@@ -4852,7 +4852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835317394075921434}
   - component: {fileID: 1835317394075921435}
-  - component: {fileID: 2187645394244000550}
+  - component: {fileID: 1537642562526310348}
   - component: {fileID: 1805699519}
   - component: {fileID: 2863113588100397392}
   - component: {fileID: -5268273650241968914}
@@ -4932,7 +4932,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2187645394244000550
+--- !u!114 &1537642562526310348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4941,12 +4941,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1835317394075921432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91fe481035b107748abf5810309a36c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 61ebd915147b4642a297ff7786267cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bonesSound: {fileID: 8300000, guid: f5a970032a5551d43aef90d423fecc4b, type: 3}
   _gravity: 9
   _groundLevel: -8.5
+  _audioSource: {fileID: -5268273650241968914}
+  _floatingObject: {fileID: 2863113588100397392}
 --- !u!58 &1805699519
 CircleCollider2D:
   m_ObjectHideFlags: 0

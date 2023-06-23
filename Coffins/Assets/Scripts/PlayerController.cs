@@ -9,25 +9,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _animationSpeed = 0.7f;
     [SerializeField] private Animator _animator;
 
-    private float _startPositionX = 0, _targetPositionX = 0;
-
+    private float _sourcePositionX = 0, _targetPositionX = 0;
     private const float LeftMovingBorder = -4.5f;
     private const float RightMovingBorder = 4.5f;
-
+    
+    private static readonly int LeftAnimParam = Animator.StringToHash("Left");
+    private static readonly int RightAnimParam = Animator.StringToHash("Right");
+    
     private int DetermineDirection(float begin, float end) {
 
         if (begin < end)
         {
             _animator.speed = _animationSpeed;
-            _animator.SetBool("Left", false);
-            _animator.SetBool("Right", true); 
+            _animator.SetBool(LeftAnimParam, false);
+            _animator.SetBool(RightAnimParam, true); 
             return 1;
         }
         else if (begin > end)
         {
             _animator.speed = _animationSpeed;
-            _animator.SetBool("Right", false);
-            _animator.SetBool("Left", true);
+            _animator.SetBool(RightAnimParam, false);
+            _animator.SetBool(LeftAnimParam, true);
             return -1;
         }
         else {
@@ -39,9 +41,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        DetermineDirection(_startPositionX, _targetPositionX);
-        _startPositionX = _player.position.x;
-        _targetPositionX = _startPositionX;    
+        DetermineDirection(_sourcePositionX, _targetPositionX);
+        _sourcePositionX = _player.position.x;
+        _targetPositionX = _sourcePositionX;    
     }
 
     private void OnMouseDown(){
@@ -65,10 +67,8 @@ public class PlayerController : MonoBehaviour
         fingerPos.x = (fingerPos.x > RightMovingBorder) ? RightMovingBorder : fingerPos.x;
         fingerPos.x = (fingerPos.x < LeftMovingBorder) ? LeftMovingBorder : fingerPos.x;
 
-        _startPositionX = _player.position.x;
-        
+        _sourcePositionX = _player.position.x;
         _player.position = Vector2.MoveTowards(_player.position, fingerPos, _speed * Time.deltaTime);
-
         _targetPositionX = _player.position.x;        
     }
 
