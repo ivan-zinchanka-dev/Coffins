@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using ObjectsPool;
+using UnityEngine;
 
 namespace FallingObjects
 {
-    public class FallingObject : MonoBehaviour {
+    public class FallingObject : FloatingObject {
         
         [SerializeField] private float _gravity = 9.0f;                      
         [SerializeField] private float _groundLevel = -8.5f;

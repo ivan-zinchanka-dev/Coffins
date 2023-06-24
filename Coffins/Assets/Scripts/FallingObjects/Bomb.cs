@@ -1,17 +1,15 @@
-﻿using ObjectsPool;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace FallingObjects
 {
     public class Bomb : FallingObject
     {
         [SerializeField] private AudioSource _audioSource;
-        [SerializeField] private FloatingObject _floatingObject;
 
         public void Detonate()
         {
             SpecialEffectsManager.Instance.CreateExplosion(this.transform.position); 
-            _floatingObject.ReturnToPool();  
+            ReturnToPool();  
         }
 
         protected override void OnRespawn()

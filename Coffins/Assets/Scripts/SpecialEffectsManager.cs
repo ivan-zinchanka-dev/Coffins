@@ -1,4 +1,5 @@
-﻿using ObjectsPool;
+﻿using Effects;
+using ObjectsPool;
 using UnityEngine;
 
 public class SpecialEffectsManager : MonoBehaviour
@@ -13,7 +14,7 @@ public class SpecialEffectsManager : MonoBehaviour
     private ObjectPool _smokePool;
     private ObjectPool _explosionPool;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance != null)
         {

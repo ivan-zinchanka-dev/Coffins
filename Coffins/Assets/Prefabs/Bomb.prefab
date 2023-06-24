@@ -4854,7 +4854,6 @@ GameObject:
   - component: {fileID: 1835317394075921435}
   - component: {fileID: 1537642562526310348}
   - component: {fileID: 1805699519}
-  - component: {fileID: 2863113588100397392}
   - component: {fileID: -5268273650241968914}
   - component: {fileID: 6925150153619004627}
   m_Layer: 0
@@ -4947,7 +4946,6 @@ MonoBehaviour:
   _gravity: 9
   _groundLevel: -8.5
   _audioSource: {fileID: -5268273650241968914}
-  _floatingObject: {fileID: 2863113588100397392}
 --- !u!58 &1805699519
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4964,18 +4962,6 @@ CircleCollider2D:
   m_Offset: {x: -0.05, y: -0.4}
   serializedVersion: 2
   m_Radius: 1.75
---- !u!114 &2863113588100397392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1835317394075921432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deaaa6358f86e724b828afa15c6fd512, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &-5268273650241968914
 AudioSource:
   m_ObjectHideFlags: 0

@@ -668,10 +668,11 @@ GameObject:
   m_Component:
   - component: {fileID: 522945315}
   - component: {fileID: 522945314}
+  - component: {fileID: 522945318}
   - component: {fileID: 522945316}
   - component: {fileID: 522945317}
   m_Layer: 0
-  m_Name: Generator
+  m_Name: Management
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -689,10 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d803a7e33f03c5d4f9c6deeeb0c0e094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skeletons:
-  - {fileID: 1775565891102820795, guid: 12449940fad50b94a8df9dd6e76ff6a5, type: 3}
-  - {fileID: 7280681618904114593, guid: 4881882130a91ee49be8da9a50ec6fca, type: 3}
-  _bomb: {fileID: 2863113588100397392, guid: a1cfaa8be566c1a4384d6ea7572d5c5c, type: 3}
+  _fallingObjectsGenerator: {fileID: 522945318}
   _coffin: {fileID: 785735729}
   _msg: {fileID: 167825216}
 --- !u!4 &522945315
@@ -824,6 +822,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &522945318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522945313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c797e17a664c55a3ec149780638ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentDelay: 1.5
+  _minDelay: 0.5
+  _delayDecreasingStep: 0.2
+  _skeletonOriginals:
+  - {fileID: 5659155063746087301, guid: 12449940fad50b94a8df9dd6e76ff6a5, type: 3}
+  - {fileID: 3686025951507211679, guid: 4881882130a91ee49be8da9a50ec6fca, type: 3}
+  _bombOriginal: {fileID: 1537642562526310348, guid: a1cfaa8be566c1a4384d6ea7572d5c5c,
+    type: 3}
 --- !u!1 &543390650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -114.37, y: -50.83}
+  m_AnchoredPosition: {x: -114.37, y: -50.830017}
   m_SizeDelta: {x: 195, y: 57.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824862770
