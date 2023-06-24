@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ObjectsPool;
+using UnityEngine;
 
 public class ParticlesFloatingObject : FloatingObject
 {

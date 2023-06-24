@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ObjectsPool;
+using UnityEngine;
 
 namespace FallingObjects
 {
@@ -7,6 +8,7 @@ namespace FallingObjects
         [SerializeField] private Animator _animator;
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private AudioClip _bonesSound;
+        [SerializeField] private FloatingObject _floatingObject;
         
         private static readonly int IsFallenParam = Animator.StringToHash("isFallen");
 
@@ -16,6 +18,11 @@ namespace FallingObjects
             _audioSource.PlayOneShot(_bonesSound);
             
             GameManager.Instance.GameOver = true;
+        }
+
+        public void OnCaught()
+        {
+            _floatingObject.ReturnToPool();
         }
     }
 }

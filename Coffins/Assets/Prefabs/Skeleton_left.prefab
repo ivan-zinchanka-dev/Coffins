@@ -106,6 +106,7 @@ MonoBehaviour:
   _animator: {fileID: 74408178}
   _audioSource: {fileID: 4461076870539459172}
   _bonesSound: {fileID: 8300000, guid: f10fe36b4d262d84cb18064bcb3e1d48, type: 3}
+  _floatingObject: {fileID: 1775565891102820795}
 --- !u!61 &-4249171819105085731
 BoxCollider2D:
   m_ObjectHideFlags: 0

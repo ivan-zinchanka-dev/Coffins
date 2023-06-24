@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using FallingObjects;
+using ObjectsPool;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour{

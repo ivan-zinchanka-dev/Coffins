@@ -1,7 +1,6 @@
 ﻿using FallingObjects;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class ReactiveBody : MonoBehaviour {
 
     [SerializeField] private TMPro.TMP_Text _scoreView; 
@@ -12,9 +11,9 @@ public class ReactiveBody : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
 
-        if (other.gameObject.tag == "Skeleton")
+        if (other.TryGetComponent<Skeleton>(out Skeleton skeleton))
         {
-            other.GetComponent<FloatingObject>().ReturnToPool();
+            skeleton.OnCaught();
             _hitSound.Play();
 
             if (!GameManager.Instance.GameOver) {
@@ -23,9 +22,9 @@ public class ReactiveBody : MonoBehaviour {
                 _scoreView.text = string.Format("{0:d}", _score);
             }
         }
-        else if (other.gameObject.tag == "Bomb") {
+        else if (other.TryGetComponent<Bomb>(out Bomb bomb)) {
 
-            other.GetComponent<Bomb>().Detonate();
+            bomb.Detonate();
             _render.color = Color.gray;
 
             if (!GameManager.Instance.GameOver) {

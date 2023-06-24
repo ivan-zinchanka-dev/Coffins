@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.Serialization;
+﻿using ObjectsPool;
+using UnityEngine;
 
 public class SpecialEffectsManager : MonoBehaviour
 {
