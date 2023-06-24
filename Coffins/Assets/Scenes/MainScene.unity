@@ -690,9 +690,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d803a7e33f03c5d4f9c6deeeb0c0e094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerController: {fileID: 1727846734}
   _fallingObjectsGenerator: {fileID: 522945318}
   _coffin: {fileID: 785735729}
   _msg: {fileID: 167825216}
+  _scoreView: {fileID: 824862770}
 --- !u!4 &522945315
 Transform:
   m_ObjectHideFlags: 0
@@ -1054,9 +1056,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942bdef7005257848a7663ee04bbaebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreView: {fileID: 824862770}
   _render: {fileID: 785735726}
   _hitSound: {fileID: 785735732}
+  _onSkeletonCaught:
+    m_PersistentCalls:
+      m_Calls: []
+  _onBombnCaught:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &785735730
 Rigidbody2D:
   serializedVersion: 4

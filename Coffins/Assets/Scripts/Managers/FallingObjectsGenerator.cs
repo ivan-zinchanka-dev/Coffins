@@ -8,7 +8,7 @@ namespace Managers
 {
     public class FallingObjectsGenerator : MonoBehaviour
     {
-        [SerializeField] private float _currentDelay = 1.5f;
+        [SerializeField] private float _maxDelay = 1.5f;
         [SerializeField] private float _minDelay = 0.5f;
         [SerializeField] private float _delayDecreasingStep = 0.2f;
         
@@ -24,18 +24,29 @@ namespace Managers
         private const float ScreenLeftBorder = -4.0f;
         private const float ScreenRightBorder = 4.0f;
         
+        private Coroutine _spawningRoutine;
+        private float _currentDelay;
+        
         private void Awake()
         {
+            _currentDelay = _maxDelay;
+            
             _bombsPool = new ObjectPool(3, _bombOriginal);
             _skeletonsLeftPool = new ObjectPool(2, _skeletonOriginals[0]);
             _skeletonsRightPool = new ObjectPool(2, _skeletonOriginals[1]);
         }
         
-        public void Begin(){
-            
-            StartCoroutine(Spawn());
-        }
+        public void StartSpawning(){
 
+            if (_spawningRoutine != null)
+            {
+                _currentDelay = _maxDelay;
+                StopCoroutine(_spawningRoutine);
+            }
+
+            _spawningRoutine = StartCoroutine(Spawn());
+        }
+        
         public void DecreaseDelay()
         {
             if (_currentDelay > _minDelay)

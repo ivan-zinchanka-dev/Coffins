@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managers;
+using UnityEngine;
 
 namespace FallingObjects
 {
@@ -8,7 +9,7 @@ namespace FallingObjects
 
         public void Detonate()
         {
-            SpecialEffectsManager.Instance.CreateExplosion(this.transform.position); 
+            EffectsManager.Instance.CreateExplosion(this.transform.position); 
             ReturnToPool();  
         }
 
