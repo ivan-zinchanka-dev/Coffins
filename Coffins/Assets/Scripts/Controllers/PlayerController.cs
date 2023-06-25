@@ -22,6 +22,8 @@ namespace Controllers
         
         private int DetermineDirection(float begin, float end) {
 
+            _animator.SetFloat("normalized_direction", end - begin);
+            
             if (begin < end)
             {
                 _animator.speed = _animationSpeed;
