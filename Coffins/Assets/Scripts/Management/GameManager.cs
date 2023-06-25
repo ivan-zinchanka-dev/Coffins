@@ -10,24 +10,23 @@ namespace Management
         public static GameManager Instance { get; private set; } = null;
 
         [SerializeField] private float _defaultGravity = 10.0f;
-        [SerializeField] private PlayerController _playerController;
+        [SerializeField] private int _skeletonPrice = 1;
+        [SerializeField] private int _skeletonsToNextStage = 10;
+        [SerializeField] private int _maxGameStages = 20;
+        
+        [Space]
+        [SerializeField] private GameScore _score;
         [SerializeField] private FallingObjectsSpawner _fallingObjectsSpawner;
+        [SerializeField] private PlayerController _playerController;
         [SerializeField] private ControlledBody _coffin;
         
         [Header("UI")]
-        [SerializeField] private TextMeshProUGUI _scoreText;
         [SerializeField] private TextMeshProUGUI _gameStateText;
         
         private bool _gameOver;
         private bool _tutorialBlocker = true;
         
         private byte _gameStage = 0;
-        private int _score = 0;
-
-        private int _skeletonPrice = 10;
-        private int _skeletonsToNextStage = 100;
-        private int _maxGameStages = 20;
-        
         
         public event Action OnSessionRestart;
         
@@ -96,10 +95,7 @@ namespace Management
         private void RestartSession()
         {
             _gameOver = false;
-            
-            _score = 0;
-            _scoreText.text = string.Format("{0:d}", _score);
-            
+            _score.Set(0);
             _gameStage = 0;
             StartSession();
             
@@ -113,7 +109,7 @@ namespace Management
                 return;           
             } 
 
-            if (_score / _skeletonsToNextStage > _gameStage) {
+            if (_score.Get() / _skeletonsToNextStage > _gameStage) {
 
                 if (_gameStage < _maxGameStages){
 
@@ -128,8 +124,7 @@ namespace Management
         {
             if (!_gameOver) {
 
-                _score += _skeletonPrice;
-                _scoreText.text = string.Format("{0:d}", _score);
+                _score.Add(_skeletonPrice);
             }
         }
         

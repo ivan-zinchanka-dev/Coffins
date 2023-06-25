@@ -797,6 +797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 522945315}
   - component: {fileID: 522945314}
+  - component: {fileID: 522945316}
   m_Layer: 0
   m_Name: Management
   m_TagString: Untagged
@@ -817,10 +818,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultGravity: 10
-  _playerController: {fileID: 1727846734}
+  _skeletonPrice: 1
+  _skeletonsToNextStage: 10
+  _maxGameStages: 20
+  _score: {fileID: 522945316}
   _fallingObjectsSpawner: {fileID: 1570729330}
+  _playerController: {fileID: 1727846734}
   _coffin: {fileID: 785735729}
-  _scoreText: {fileID: 824862770}
   _gameStateText: {fileID: 167825216}
 --- !u!4 &522945315
 Transform:
@@ -840,6 +844,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &522945316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522945313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e9b6b88cc445bbb345906023ef2950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreText: {fileID: 824862770}
 --- !u!1 &543390650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,7 +1171,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785735725}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.34004763, z: 0}
+  m_LocalPosition: {x: 0, y: -0.3400476, z: 0}
   m_LocalScale: {x: 0.035214283, y: 0.02347619, z: 0.493}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1465,8 +1482,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -114.369995, y: -50.830017}
-  m_SizeDelta: {x: 195, y: 57.98}
+  m_AnchoredPosition: {x: -162, y: -80}
+  m_SizeDelta: {x: 281.63, y: 118.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824862770
 MonoBehaviour:
@@ -1488,7 +1505,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 'Score: 80
+
+    <size=60%>record: 80 </size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a0a5800c0615474418a7ef1dadfd9c78, type: 2}
   m_sharedMaterial: {fileID: -3612867569339599302, guid: a0a5800c0615474418a7ef1dadfd9c78,
@@ -1516,15 +1535,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 1
   m_HorizontalAlignment: 4
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
