@@ -21,8 +21,13 @@ namespace Management
         private bool _gameOver;
         private bool _tutorialBlocker = true;
         
-        private byte _gameStage = 1;
+        private byte _gameStage = 0;
         private int _score = 0;
+
+        private int _skeletonPrice = 10;
+        private int _skeletonsToNextStage = 100;
+        private int _maxGameStages = 20;
+        
         
         public event Action OnSessionRestart;
         
@@ -95,7 +100,7 @@ namespace Management
             _score = 0;
             _scoreText.text = string.Format("{0:d}", _score);
             
-            _gameStage = 1;
+            _gameStage = 0;
             StartSession();
             
             OnSessionRestart?.Invoke();
@@ -108,9 +113,9 @@ namespace Management
                 return;           
             } 
 
-            if (_score / 100 > _gameStage - 1) {
+            if (_score / _skeletonsToNextStage > _gameStage) {
 
-                if (_gameStage < 20){
+                if (_gameStage < _maxGameStages){
 
                     _gameStage++;
                 }
@@ -123,7 +128,7 @@ namespace Management
         {
             if (!_gameOver) {
 
-                _score += 10;
+                _score += _skeletonPrice;
                 _scoreText.text = string.Format("{0:d}", _score);
             }
         }
