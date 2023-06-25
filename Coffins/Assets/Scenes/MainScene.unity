@@ -1482,7 +1482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -162, y: -80}
+  m_AnchoredPosition: {x: -162, y: -66}
   m_SizeDelta: {x: 281.63, y: 118.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824862770
@@ -1507,7 +1507,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: 80
 
-    <size=60%>record: 80 </size>'
+    <size=60%>record: 80</size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a0a5800c0615474418a7ef1dadfd9c78, type: 2}
   m_sharedMaterial: {fileID: -3612867569339599302, guid: a0a5800c0615474418a7ef1dadfd9c78,
