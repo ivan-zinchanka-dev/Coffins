@@ -4,9 +4,9 @@ using FallingObjects;
 using ObjectsPool;
 using UnityEngine;
 
-namespace Managers
+namespace Management
 {
-    public class FallingObjectsGenerator : MonoBehaviour
+    public class FallingObjectsSpawner : MonoBehaviour
     {
         [SerializeField] private float _maxDelay = 1.5f;
         [SerializeField] private float _minDelay = 0.5f;

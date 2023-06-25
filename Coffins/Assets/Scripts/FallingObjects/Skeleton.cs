@@ -1,4 +1,4 @@
-﻿using Managers;
+﻿using Management;
 using UnityEngine;
 
 namespace FallingObjects

@@ -1,6 +1,6 @@
 ﻿using System;
 using FallingObjects;
-using Managers;
+using Management;
 using UnityEngine;
 using UnityEngine.Events;
 

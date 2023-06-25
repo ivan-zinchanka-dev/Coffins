@@ -2,9 +2,8 @@
 using Controllers;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Managers
+namespace Management
 {
     public class GameManager : MonoBehaviour{
 
@@ -12,7 +11,7 @@ namespace Managers
 
         [SerializeField] private float _defaultGravity = 10.0f;
         [SerializeField] private PlayerController _playerController;
-        [SerializeField] private FallingObjectsGenerator _fallingObjectsGenerator;
+        [SerializeField] private FallingObjectsSpawner _fallingObjectsSpawner;
         [SerializeField] private ControlledBody _coffin;
         
         [Header("UI")]
@@ -86,7 +85,7 @@ namespace Managers
         {
             _tutorialBlocker = false;
             _gameStateText.text = string.Empty;
-            _fallingObjectsGenerator.StartSpawning();
+            _fallingObjectsSpawner.StartSpawning();
         }
 
         private void RestartSession()
@@ -116,7 +115,7 @@ namespace Managers
                     _gameStage++;
                 }
 
-                _fallingObjectsGenerator.DecreaseDelay();
+                _fallingObjectsSpawner.DecreaseDelay();
             }      
         }
         

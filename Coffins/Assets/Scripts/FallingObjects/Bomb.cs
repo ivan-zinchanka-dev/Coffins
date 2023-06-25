@@ -1,4 +1,4 @@
-﻿using Managers;
+﻿using Management;
 using UnityEngine;
 
 namespace FallingObjects
@@ -9,7 +9,7 @@ namespace FallingObjects
 
         public void Detonate()
         {
-            EffectsManager.Instance.CreateExplosion(this.transform.position); 
+            EffectsSpawner.Instance.CreateExplosion(transform.position); 
             ReturnToPool();  
         }
 

@@ -2,11 +2,11 @@
 using ObjectsPool;
 using UnityEngine;
 
-namespace Managers
+namespace Management
 {
-    public class EffectsManager : MonoBehaviour
+    public class EffectsSpawner : MonoBehaviour
     {
-        public static EffectsManager Instance { get; private set; } = null;
+        public static EffectsSpawner Instance { get; private set; } = null;
 
         [SerializeField] private ParticlesFloatingObject _smokeOriginal = null;
         [SerializeField] private FloatingObject _explosionSparkOriginal = null;
