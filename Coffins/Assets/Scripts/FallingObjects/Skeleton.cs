@@ -16,7 +16,12 @@ namespace FallingObjects
         {
             GameManager.Instance.OnSessionRestart += OnSessionRestart;
         }
-
+        
+        protected override void OnRespawn()
+        {
+            _audioSource.Play();
+        }
+        
         private void OnSessionRestart()
         {
             _animator.SetTrigger(RestartParam);

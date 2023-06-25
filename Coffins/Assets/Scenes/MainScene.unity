@@ -323,7 +323,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 401863958}
   m_RootOrder: 1
@@ -331,7 +331,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 52}
-  m_SizeDelta: {x: 408, y: 104}
+  m_SizeDelta: {x: 420, y: 104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &167825215
 MeshRenderer:
@@ -341,8 +341,8 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167825213}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -187.64566, y: 0, z: -189.46756, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -690,11 +690,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d803a7e33f03c5d4f9c6deeeb0c0e094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defaultGravity: 10
   _playerController: {fileID: 1727846734}
   _fallingObjectsGenerator: {fileID: 522945318}
   _coffin: {fileID: 785735729}
-  _msg: {fileID: 167825216}
-  _scoreView: {fileID: 824862770}
+  _scoreText: {fileID: 824862770}
+  _gameStateText: {fileID: 167825216}
 --- !u!4 &522945315
 Transform:
   m_ObjectHideFlags: 0
@@ -836,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c797e17a664c55a3ec149780638ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentDelay: 1.5
+  _maxDelay: 1.5
   _minDelay: 0.5
   _delayDecreasingStep: 0.2
   _skeletonOriginals:
@@ -1322,7 +1323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -114.37, y: -50.830017}
+  m_AnchoredPosition: {x: -114.369995, y: -50.830017}
   m_SizeDelta: {x: 195, y: 57.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824862770
@@ -1339,7 +1340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1430,8 +1431,8 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824862768}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1

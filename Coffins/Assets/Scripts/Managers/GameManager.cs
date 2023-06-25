@@ -1,6 +1,8 @@
 ﻿using System;
 using Controllers;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Managers
 {
@@ -8,20 +10,21 @@ namespace Managers
 
         public static GameManager Instance { get; private set; } = null;
 
+        [SerializeField] private float _defaultGravity = 10.0f;
         [SerializeField] private PlayerController _playerController;
         [SerializeField] private FallingObjectsGenerator _fallingObjectsGenerator;
         [SerializeField] private ControlledBody _coffin;
-        [SerializeField] private TMPro.TMP_Text _msg;
-        [SerializeField] private TMPro.TMP_Text _scoreView;
         
+        [Header("UI")]
+        [SerializeField] private TextMeshProUGUI _scoreText;
+        [SerializeField] private TextMeshProUGUI _gameStateText;
+        
+        private bool _gameOver;
         private bool _tutorialBlocker = true;
         
-        private int _score = 0;
-        private float _gameSpeed = 10.0f;
         private byte _gameStage = 1;
-    
-
-        private bool _gameOver;
+        private int _score = 0;
+        
         public event Action OnSessionRestart;
         
         public bool GameOver {
@@ -31,30 +34,13 @@ namespace Managers
             set
             {
                 _gameOver = value;
-                _msg.text = _gameOver ? "Game over!\nTap to restart" : string.Empty;
+                _gameStateText.text = _gameOver ? "Game over!\nTap to restart" : string.Empty;
             }
         }
 
         public float GetGravity(){
 
-            return _gameSpeed * (1.0f + (float)_gameStage / 10);
-        }
-
-        private void OnSkeletonCaught()
-        {
-            if (!_gameOver) {
-
-                _score += 10;
-                _scoreView.text = string.Format("{0:d}", _score);
-            }
-        }
-        
-        private static void OnBombCaught()
-        {
-            if (!Instance.GameOver) {
-              
-                Instance.GameOver = true;
-            }   
+            return _defaultGravity * (1.0f + (float)_gameStage / 10);
         }
 
         private void Awake()
@@ -75,6 +61,14 @@ namespace Managers
             _coffin.OnSkeletonCaught.AddListener(OnSkeletonCaught);
             _coffin.OnBombCaught.AddListener(OnBombCaught);
         }
+        
+        private void Start()
+        {
+            if (_tutorialBlocker)
+            {
+                _gameStateText.text = "Tap to start";
+            }
+        }
 
         private void OnControllerSignal()
         {
@@ -87,19 +81,11 @@ namespace Managers
                 StartSession();
             }
         }
-
-        private void Start()
-        {
-            if (_tutorialBlocker)
-            {
-                _msg.text = "Tap to start";
-            }
-        }
-
+        
         private void StartSession()
         {
             _tutorialBlocker = false;
-            _msg.text = string.Empty;
+            _gameStateText.text = string.Empty;
             _fallingObjectsGenerator.StartSpawning();
         }
 
@@ -108,18 +94,14 @@ namespace Managers
             _gameOver = false;
             
             _score = 0;
-            _scoreView.text = string.Format("{0:d}", _score);
+            _scoreText.text = string.Format("{0:d}", _score);
             
-            _gameSpeed = 10.0f;
             _gameStage = 1;
-            
             StartSession();
             
             OnSessionRestart?.Invoke();
         }
         
-
-
         private void Update(){
 
             if (_gameOver || _tutorialBlocker) {
@@ -136,6 +118,23 @@ namespace Managers
 
                 _fallingObjectsGenerator.DecreaseDelay();
             }      
+        }
+        
+        private void OnSkeletonCaught()
+        {
+            if (!_gameOver) {
+
+                _score += 10;
+                _scoreText.text = string.Format("{0:d}", _score);
+            }
+        }
+        
+        private static void OnBombCaught()
+        {
+            if (!Instance.GameOver) {
+              
+                Instance.GameOver = true;
+            }   
         }
         
         private void OnDisable()
