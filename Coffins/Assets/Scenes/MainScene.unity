@@ -938,12 +938,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 785735727}
+  - component: {fileID: 785735729}
   - component: {fileID: 785735726}
   - component: {fileID: 785735728}
   - component: {fileID: 785735730}
   - component: {fileID: 785735731}
   - component: {fileID: 785735732}
-  - component: {fileID: 785735729}
   m_Layer: 0
   m_Name: Coffin
   m_TagString: Untagged
