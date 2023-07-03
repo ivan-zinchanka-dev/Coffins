@@ -1,5 +1,0 @@
-Set-Location -Path "D:\Documents\GitReposes\Coffins\Coffins\MyBuild"
-python -m http.server
-localhost:8000
-http://localhost:58288/
-matchWebGLToCanvasSize: false,
